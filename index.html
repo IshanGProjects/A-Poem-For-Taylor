@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Poem For Taylor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+</head>
+<body>
+    <div id="container" class="petal-container hidden"></div> 
+    <div id="poemContainer" class="content-container">
+        <h1>A Poem For Taylor</h1>
+        <!-- Heart-shaped poem counter -->
+        <div id="heart-counter" class="heart-counter">
+            <span class="poems-generated">0</span>/<span class="total-poems">4</span>
+        </div>        
+        <div id="formContainer">
+            <form id="madLibsForm">
+                <input type="text" id="adjective1" placeholder="Adjective describing you" required><br>
+                <input type="text" id="activity" placeholder="your favorite activity" required><br>
+                <input type="text" id="loves" placeholder="Something you love" required><br>
+                <input type="text" id="adjective2" placeholder="Adjective describing your spirit" required><br>
+                <button type="button" id="generateBtn">Generate Poem</button>
+            </form>
+        </div>
+        <div id="poem" class="hidden"></div>
+        <button id="backBtn" class="hidden">&#x2190; Create another poem</button>
+    </div>
+    
+
+    <script  src="script.js"></script>
+</body>
+</html>

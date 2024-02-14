@@ -1,0 +1,251 @@
+.dot {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    background: url('https://image.ibb.co/kyUHab/rose.png'); 
+    background-size: 100% 100%;
+    z-index: 11
+}
+
+html, body, #container {
+    width: 100%;
+    height: 100%;
+}
+
+#logo {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.lobster-two-bold {
+    font-family: "Lobster Two", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    background-color: #ffccd5;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+}
+
+.petal-container {
+    position: fixed; /* or 'absolute' depending on your layout */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10; /* Adjust as needed to be above or below certain elements */
+    pointer-events: none; /* Allows clicks to pass through */
+}
+
+
+.container {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10; /* Ensure this is above the z-index of other elements */
+    pointer-events: none; /* Allows clicks to pass through */
+}
+
+
+h1 {
+    font-family: "Lobster Two", sans-serif;
+    color: #e3252f;
+    margin: 20px 0 30px;
+}
+
+form {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 auto 30px;
+    display: block;
+    width: 90%;
+    max-width: 500px;
+}
+
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #e3252f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #ba1e26;
+}
+
+#poem {
+    background-color: #ffe0f0;
+    color: #d23669;
+    padding: 20px; /* Ensure adequate padding */
+    border-radius: 10px;
+    display: none;
+    width: 90%; /* Responsive width */
+    max-width: 500px; /* Maximum width to keep the content readable */
+    margin: 20px auto; /* Center the poem container and provide spacing from other elements */
+    box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+.hidden {
+    display: none;
+}
+
+#backBtn {
+    background-color: #ffe0f0;
+    border-color: #d23669;
+    color: #d23669;
+    padding: 10px 20px;
+    display: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 4px;
+    margin: 20px auto 0;
+    width: 90%;
+    max-width: 300px;
+}
+
+#petals {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    display: none;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateX(-50%) rotate(0deg); /* Start from the center */
+        top: -100px; /* Start from above the viewport */
+    }
+    100% {
+        transform: translateX(calc(-50% + 100px)) rotate(720deg); /* End position adjusted to maintain the falling path */
+        top: 100vh;
+    }
+}
+
+
+/* Improved form styling for better centering and padding */
+form {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px; /* Increased padding for better spacing */
+    margin: 20px auto; /* Adjusted for better centering */
+    display: block;
+    width: 90%; /* More responsive width */
+    max-width: 500px; /* Max-width to prevent the form from becoming too wide on large screens */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+/* Enhanced responsive design adjustments for mobile devices */
+@media only screen and (max-width: 768px) {
+    #poem {
+        width: 95%; /* Allow the poem to take up more width on smaller screens */
+        padding: 15px; /* Adjust padding for tighter spaces */
+        margin: 15px auto; /* Adjust top and bottom margins for spacing */
+    }
+
+    form {
+        width: 95%; /* Allow the form to take up a bit more width on smaller screens */
+        padding: 15px; /* Slightly reduced padding on smaller screens */
+    }
+
+    input[type="text"], button {
+        font-size: 16px; /* Adjust font size for better readability on smaller screens */
+        padding: 12px; /* Adjust padding for comfort */
+    }
+
+    #backBtn {
+        width: 95%; /* Adjust back button width to match the form on smaller screens */
+        padding: 10px; /* Adjust padding for the back button */
+    }
+}
+
+@keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+.swirl-line {
+width: 100%;
+height: 5px; /* Adjust the height as needed */
+border-top: 2px dashed #d23669; /* Color and style of the dashed line */
+margin: 20px 0; /* Spacing above and below the line */
+animation: dash 1.5s linear infinite;
+}
+
+/* Create a dash animation */
+@keyframes dash {
+0% {
+    background-position: 0;
+}
+100% {
+    background-position: 100px;
+}
+}
+
+#heart-counter {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #ff6961; /* Heart color */
+    font-size: 24px;
+}
+
+#heart-counter .poems-left {
+    padding-right: 5px;
+    position: relative;
+    bottom: 5px;
+}
+
+#heart-counter:before {
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #ff6961; /* Heart color */
+    transform: rotate(-45deg);
+    margin-right: 5px;
+}
+
+#heart-counter:after {
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #ff6961; /* Heart color */
+    transform: rotate(45deg);
+    margin-left: 5px;
+}
+
+
+
+  
