@@ -28,7 +28,6 @@ html, body, #container {
 body {
     background-color: #ffccd5;
     text-align: center;
-    padding: 20px;
     margin: 0;
 }
 
@@ -55,6 +54,7 @@ body {
 
 
 h1 {
+    padding-top: 10%;
     font-family: "Lobster Two", sans-serif;
     color: #e3252f;
     margin: 20px 0 30px;
@@ -170,9 +170,9 @@ form {
         margin: 15px auto; /* Adjust top and bottom margins for spacing */
     }
 
-    form {
+    #formContainer {
         width: 95%; /* Allow the form to take up a bit more width on smaller screens */
-        padding: 15px; /* Slightly reduced padding on smaller screens */
+        margin: 0 auto; 
     }
 
     input[type="text"], button {
@@ -183,6 +183,31 @@ form {
     #backBtn {
         width: 95%; /* Adjust back button width to match the form on smaller screens */
         padding: 10px; /* Adjust padding for the back button */
+    }
+
+    /* Heart counter */
+    #heart-counter {
+        position: relative;
+        text-align: center;
+        margin: 20px auto; /* Center the heart counter horizontally */
+    }
+
+    #heart-counter .poems-left {
+        padding-right: 5px;
+        position: relative;
+        bottom: 5px;
+    }
+
+    #heart-counter:before,
+    #heart-counter:after {
+        content: '';
+        position: relative;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-color: #ff6961;
+        transform: rotate(-45deg);
+        margin: 0 5px;
     }
 }
 
@@ -245,6 +270,8 @@ animation: dash 1.5s linear infinite;
     transform: rotate(45deg);
     margin-left: 5px;
 }
+
+
 
 
 
